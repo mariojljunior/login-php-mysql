@@ -54,3 +54,16 @@ a{
 a:hover{
     text-decoration: underline;
 }
+
+#msg-sucesso{
+    width: 420px;
+    margin: 10px auto;
+}
+
+.msg-erro{
+    width: 420px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(250, 128, 114, 0.3);
+    border: 1px solid rgb(165, 42, 42);
+}
