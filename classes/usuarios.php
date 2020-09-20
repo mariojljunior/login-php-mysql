@@ -1,6 +1,6 @@
 <?php
 
-class Usuario{
+Class Usuario{
 
     private $pdo;
     public $msgErro = "";
@@ -54,6 +54,5 @@ class Usuario{
         }
     }
 }
-
 
 ?>
