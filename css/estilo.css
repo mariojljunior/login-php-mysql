@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("../img/map_cta_back_dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 1px solid black;
+    font-size: 16pt;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.01);
+    color: white;
+    outline: none;
+}
+
+input[type=submit]{
+    background-color: #ff0066;
+    border: none;
+    cursor: pointer;
+}
+
+#corpo-form{
+    /*background-color: #808080;*/
+    width: 450px;
+    margin: 100px auto 0px auto;
+}
+
+#corpo-form h1{
+    text-align: center;
+    padding: 20px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+a:hover{
+    text-decoration: underline;
+}
