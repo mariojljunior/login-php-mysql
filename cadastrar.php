@@ -1,3 +1,8 @@
+<?php
+    require_once 'classes/usuarios.php';
+    $u = new Usuario;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +14,7 @@
 <body>
     <div id="corpo-form">
         <h1>Cadastrar</h1>
-        <form method="POST" action="processa.php">
+        <form method="POST">
             <input type="text" name="nome" placeholder="Nome Completo" maxlength="30">
             <input type="text" name="telefone" placeholder="Telefone" maxlength="30">
             <input type="email" name="email" placeholder="Usuário" maxlength="40">
@@ -18,5 +23,37 @@
             <input type="submit" value="CADASTRAR">
         </form>
     </div>
+
+<?php
+//verificar se a pessoa clicou no botão
+if(isset($_POST['nome'])){
+
+    $nome = addslashes($_POST['nome']);
+    $telefone = addslashes($_POST['telefone']);
+    $email = addslashes($_POST['email']);
+    $senha = addslashes($_POST['senha']);
+    $confirmarSenha = addslashes($_POST['confSenha']);
+    //verificar se está preenchido
+    if(!empty($nome) && !empty($telefone) && !empty($email) && !empty($senha) && !empty($confirmarSenha)){
+        $u->conectar("projeto_login","localhost","root","22120717");
+        if($msgErro == ""){
+            if($senha == $confirmarSenha){
+                if($u->cadastrar($nome,$telefone,$email,$senha)){
+                    echo "Cadastrado com sucesso";
+                }else{
+                    echo "Email já cadastrado";
+                }
+            }else{
+                echo "Senhas não correspondem!";
+            }
+
+        }else{
+            echo "Erro: ".$msgErro;
+        }
+    }else{
+        echo "Preencha todos os campos!";
+    }
+}
+?>
 </body>
 </html>

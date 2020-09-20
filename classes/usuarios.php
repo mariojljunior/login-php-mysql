@@ -30,7 +30,7 @@ Class Usuario{
             $sql->blindValue(":n",$nome);
             $sql->blindValue(":t",$telefone);
             $sql->blindValue(":e",$email);
-            $sql->blindValue(":s",$senha);
+            $sql->blindValue(":s",md5($senha));
             $sql->execute();
             return true;
         }
@@ -41,7 +41,7 @@ Class Usuario{
         //verificar se o email e senha estão cadastrados, se sim
         $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
         $sql->blindValue(":e",$email);
-        $sql->blindValue(":s",$senha);
+        $sql->blindValue(":s",md5($senha));
         $sql->execute();
         if($sql->rowCount() > 0){
             //entra no sistema (sessão)
