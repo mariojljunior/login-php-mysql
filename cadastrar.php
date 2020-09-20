@@ -57,7 +57,6 @@ if(isset($_POST['nome'])){
                     Senhas não correspondem!
                 </div>
                 <?php
-                
             }
 
         }else{
